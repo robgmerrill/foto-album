@@ -13,15 +13,15 @@
 
   <main class="container">
     
-    <section>
+    <section class="submission">
       <entry-form
         data-new-foto="newFoto"
         data-form-submit="postNew(newFoto)"
       ></entry-form>  
     </section>
 
-    <section>
-      <foto-view data-ng-repeat="foto in fotos" data-image-data='foto'></foto-view>
+    <section class="gallery">
+      <foto-view data-ng-repeat="foto in fotos" data-foto-data='foto'></foto-view>
     </section>
 
   </main>
