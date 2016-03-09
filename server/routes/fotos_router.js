@@ -20,18 +20,18 @@ fotoRouter.post('/fotos', jsonParser, (req, res) => {
   });
 });
 
-fotoRouter.put('/fotos/:id', jsonParser, (req, res) => {
-  var fotoData = req.body;
-  delete fotoData._id;
-  Foto.update({ _id: req.params.id }, fotoData, (err) => {
-    if (err) return handleDBError(err, res);
-    res.status(200).json({ msg: 'success' });
-  });
-});
+// fotoRouter.put('/fotos/:id', jsonParser, (req, res) => {
+//   var fotoData = req.body;
+//   delete fotoData._id;
+//   Foto.update({ _id: req.params.id }, fotoData, (err) => {
+//     if (err) return handleDBError(err, res);
+//     res.status(200).json({ msg: 'success' });
+//   });
+// });
 
-fotoRouter.delete('/fotos/:id', (req, res) => {
-  Foto.remove({ _id: req.params.id }, (err) => {
-    if (err) return handleDBError(err, res);
-    res.status(200).json({ msg: 'success' })
-  });
-});
+// fotoRouter.delete('/fotos/:id', (req, res) => {
+//   Foto.remove({ _id: req.params.id }, (err) => {
+//     if (err) return handleDBError(err, res);
+//     res.status(200).json({ msg: 'success' })
+//   });
+// });

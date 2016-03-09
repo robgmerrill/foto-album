@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Foto Album</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-app="fotoApp" data-ng-controller="SoloController" data-ng-init="getAll()">
+  <header>
+    <h1>Foto Album</h1>
+    <p>The best image database with {{fotos.length}} user designated images</p>
+  </header>
+
+  <main class="container">
+    
+    <section>
+      <entry-form
+        data-new-foto="newFoto"
+        data-form-submit="postNew(newFoto)"
+      ></entry-form>  
+    </section>
+
+    <section>
+      <foto-view data-ng-repeat="foto in fotos" data-image-data='foto'></foto-view>
+    </section>
+
+  </main>
+
+  <script type="text/javascript" src="bundle.js"></script>
+
+</body>
+</html>
