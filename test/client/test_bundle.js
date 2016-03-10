@@ -33526,7 +33526,7 @@
 	    $httpBackend.flush();
 	    $rootScope.$digest();
 
-	    expect(element.html()).toContain('Submit an foto');
+	    expect(element.html()).toContain('Submit a foto');
 	  });
 
 	  it('should able to call the formSubmit function', () => {
