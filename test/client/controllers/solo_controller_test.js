@@ -33,7 +33,7 @@ describe('Solo controller', () => {
         .respond(200, [{ summary: 'some foto' }]);
 
       $scope.fotos = [];
-      $scope.loadAll();
+      $scope.getAll();
       $httpBackend.flush();
 
       expect($scope.fotos.length).toBe(1);
