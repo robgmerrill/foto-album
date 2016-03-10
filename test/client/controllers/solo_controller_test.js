@@ -16,7 +16,7 @@ describe('Solo controller', () => {
   });
 
   describe('HTTP requests', () => {
-    this.baseUrl = 'http://localhost:8081/api/fotos';
+    this.baseUrl = 'http://localhost:3000/api/fotos';
 
     beforeEach(angular.mock.inject(function(_$httpBackend_) {
       $httpBackend = _$httpBackend_;

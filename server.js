@@ -1,5 +1,5 @@
 const clientPort = 5000;
-const backendPort = 8081;
+const backendPort = 3000;
 
 const clientServer = require(__dirname + '/lib/client_server');
 clientServer(clientPort);
