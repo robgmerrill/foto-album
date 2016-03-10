@@ -33469,12 +33469,12 @@
 	    $httpBackend.whenGET(templateUrl)
 	      .respond(200, template);
 
-	    var element = $compile('<foto-view data-foto-data="{caption:\'test caption\'}"></foto-view>')($rootScope);
+	    var element = $compile('<foto-view data-foto-data="{summary:\'test summary\'}"></foto-view>')($rootScope);
 
 	    $httpBackend.flush();
 	    $rootScope.$digest();
 
-	    expect(element.html()).toContain('test caption');
+	    expect(element.html()).toContain('test summar');
 	  });
 
 	  it('should able to load and render from scope', () => {
@@ -33482,7 +33482,7 @@
 	    $httpBackend.whenGET(templateUrl)
 	      .respond(200, template);
 
-	    testScope.testFoto = { caption: 'from scope' };
+	    testScope.testFoto = { summary: 'from scope' };
 	    var element = $compile('<foto-view data-foto-data=testFoto></foto-view>')(testScope);
 
 	    $httpBackend.flush();
@@ -33674,30 +33674,30 @@
 
 	    it('should be able to load all fotos', () => {
 	      $httpBackend.expectGET(this.baseUrl)
-	        .respond(200, [{ caption: 'some foto' }]);
+	        .respond(200, [{ summary: 'some foto' }]);
 
 	      $scope.fotos = [];
 	      $scope.loadAll();
 	      $httpBackend.flush();
 
 	      expect($scope.fotos.length).toBe(1);
-	      expect($scope.fotos[0].caption).toBe('some foto');
+	      expect($scope.fotos[0].summary).toBe('some foto');
 	    });
 
 	    it('should be able to submit a new foto', () => {
-	      var reqData = { caption: 'request caption' };
-	      var resData = { caption: 'response caption' };
+	      var reqData = { summary: 'request summary' };
+	      var resData = { summary: 'response summary' };
 
 	      $httpBackend.expectPOST(this.baseUrl, reqData)
 	        .respond(200, resData);
 
 	      $scope.fotos = [];
-	      $scope.newFoto = { caption: 'new foto caption' };
+	      $scope.newFoto = { summary: 'new foto summary' };
 	      $scope.postNew(reqData);
 	      $httpBackend.flush();
 
 	      expect($scope.fotos.length).toBe(1);
-	      expect($scope.fotos[0].caption).toBe('response caption');
+	      expect($scope.fotos[0].summary).toBe('response summary');
 	      expect($scope.newFoto).toBe(null);
 	    });
 	  });

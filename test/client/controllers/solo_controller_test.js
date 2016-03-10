@@ -30,30 +30,30 @@ describe('Solo controller', () => {
 
     it('should be able to load all fotos', () => {
       $httpBackend.expectGET(this.baseUrl)
-        .respond(200, [{ caption: 'some foto' }]);
+        .respond(200, [{ summary: 'some foto' }]);
 
       $scope.fotos = [];
       $scope.loadAll();
       $httpBackend.flush();
 
       expect($scope.fotos.length).toBe(1);
-      expect($scope.fotos[0].caption).toBe('some foto');
+      expect($scope.fotos[0].summary).toBe('some foto');
     });
 
     it('should be able to submit a new foto', () => {
-      var reqData = { caption: 'request caption' };
-      var resData = { caption: 'response caption' };
+      var reqData = { summary: 'request summary' };
+      var resData = { summary: 'response summary' };
 
       $httpBackend.expectPOST(this.baseUrl, reqData)
         .respond(200, resData);
 
       $scope.fotos = [];
-      $scope.newFoto = { caption: 'new foto caption' };
+      $scope.newFoto = { summary: 'new foto summary' };
       $scope.postNew(reqData);
       $httpBackend.flush();
 
       expect($scope.fotos.length).toBe(1);
-      expect($scope.fotos[0].caption).toBe('response caption');
+      expect($scope.fotos[0].summary).toBe('response summary');
       expect($scope.newFoto).toBe(null);
     });
   });
