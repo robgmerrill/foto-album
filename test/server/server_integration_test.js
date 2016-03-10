@@ -6,7 +6,7 @@ const request = chai.request;
 
 const mongoose = require('mongoose');
 process.env.MONGOLAB_URI = 'mongodb://localhost/foto_app_test';
-const backendServer = require(__dirname + '/../../lib/backend_server');
+const backendServer = require(__dirname + '/../../lib/server');
 const testPort = 3000;
 
 describe('Server integration', () => {

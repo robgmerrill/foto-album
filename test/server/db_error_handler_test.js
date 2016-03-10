@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const dbErrorHandler = require(__dirname + '/../../lib/db_error_handler');
+const dbErrorHandler = require(__dirname + '/../../lib/handle_db_error');
 
 describe('Database error handler function', () => {
   it('should set a status code and respond with error msg', () => {
